@@ -1,0 +1,38 @@
+# Golang build artifacts
+/bin/
+/pkg/
+/vendor/
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Testing
+*.test
+
+# Dependency directories
+/go/bin/
+/go/pkg/
+/go/src/
+
+# Go Modules
+/go.sum
+/go.mod
+
+# IDE specific files (IntelliJ, GoLand, VS Code, etc.)
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# Coverage reports
+*.out
+
+# Configs and sensitive files
+.env
+config.yaml
+credentials.json

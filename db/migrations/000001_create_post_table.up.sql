@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS posts (
+     id UUID PRIMARY KEY,
+     title VARCHAR(255) NOT NULL,
+     content TEXT NOT NULL,
+     author_id UUID NOT NULL,
+     image_url VARCHAR(255),
+     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE OR REPLACE FUNCTION update_timestamp()
+    RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER set_timestamp
+    BEFORE UPDATE ON posts
+    FOR EACH ROW
+EXECUTE FUNCTION update_timestamp();
