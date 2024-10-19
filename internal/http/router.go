@@ -2,11 +2,12 @@ package http
 
 import (
 	"database/sql"
+	"github.com/EvgeniyMdr/postService/internal/http/handlers"
 	"github.com/gorilla/mux"
 )
 
 func SetupRouter(db *sql.DB) *mux.Router {
-	h := &Handlers{DB: db}
+	h := &handlers.Handlers{DB: db}
 
 	r := mux.NewRouter()
 	r.HandleFunc("/api/posts", h.GetAllPosts).Methods("GET")
