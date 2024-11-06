@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=builder /build/postservice .
 
 # Копируем SQL файлы в финальный образ
-COPY --from=builder /build/db/sql /app/db/sql
+COPY --from=builder /build/internal/db/sql /app/internal/db/sql
 
 # Экспонируем порты для HTTP сервера
 EXPOSE 8080

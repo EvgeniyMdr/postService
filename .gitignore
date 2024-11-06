@@ -17,10 +17,6 @@
 /go/pkg/
 /go/src/
 
-# Go Modules
-/go.sum
-/go.mod
-
 # IDE specific files (IntelliJ, GoLand, VS Code, etc.)
 .idea/
 .vscode/
